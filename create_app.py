@@ -5,8 +5,6 @@ from convert import *
 scale = 1
 
 basedir = os.path.abspath(os.path.dirname(__name__))
-os.chmod('completed/PiGou.png', 777)
-os.chmod('completed', 777)
 
 app = Flask(__name__)
 app.config.update(
