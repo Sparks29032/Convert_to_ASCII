@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, send_file
 from flask_dropzone import Dropzone
 from convert import *
 
+scale = 1
+
 basedir = os.path.abspath(os.path.dirname(__name__))
 os.chmod('completed/PiGou.png', 777)
 os.chmod('completed', 777)
@@ -24,7 +26,7 @@ def make_ascii():
             f = request.files.get('file')
             f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
         if request.form.get('button') == 'CONVERT!':
-            convert(1)
+            convert(int(1 / scale))
     return render_template('index.html')
 
 
