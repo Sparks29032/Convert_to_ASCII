@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII Converter</title>
+    {{ dropzone.load_css() }}
+</head>
+<body>
+    <div style="font-size: 24px">Upload a file, and we'll convert it to ASCII!</div>
+    <div style="font-size: 16px">Works with: png, jpg, jpeg, jfif, mp4, mov, avi</div>
+    <div style="font-size: 16px">Output is png for images and mp4 for videos.</div>
+    {{ dropzone.create(action='make_ascii') }}
+    {{ dropzone.load_js() }}
+    {{ dropzone.config() }}
+    <form method="post" action="/">
+        <input type="submit" value="CONVERT!" name="button" style="float: right"/>
+    </form>
+    <div></div>
+    <!-- ADD HERE -->
+</body>
+</html>
