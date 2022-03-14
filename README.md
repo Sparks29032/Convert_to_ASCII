@@ -12,6 +12,8 @@ Used MIT's "hack" font in fonts directory.
 # How to use
 Run create_app.py to create a local server (http://127.0.0.1:8080/).
 
+The first time you run the local server, hit convert before uploading files -- this will create required dependencies.
+
 Here, you can upload files to the box and hit convert to convert all uploaded files.
 
 Conversion does take a while as pixels are translated almost 1:1.
