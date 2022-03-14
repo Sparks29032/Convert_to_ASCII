@@ -20,4 +20,4 @@ Once conversion is finished, the uploads should disappear.
 All converted files will be placed in a local folder "completed" in the same directory as create_app.py.
 
 ### Required dependencies
-See requirements.txt
+See requirements.txt.
