@@ -7,7 +7,7 @@ Converted images are saved to a local folder called "completed".
 
 
 # How to use
-Run create_app.py to should create a local server (http://127.0.0.1:8080/).
+Run create_app.py to create a local server (http://127.0.0.1:8080/).
 
 Here, you can upload files to the box, and hit convert to convert all uploaded files.
 
