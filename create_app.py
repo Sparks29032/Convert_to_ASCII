@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, send_file
 from flask_dropzone import Dropzone
 from convert import *
-from write_upload import *
 
 basedir = os.path.abspath(os.path.dirname(__name__))
 os.chmod('completed/PiGou.png', 777)
