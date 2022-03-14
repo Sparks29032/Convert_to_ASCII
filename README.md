@@ -5,6 +5,9 @@ These media files can then be converted to ASCII versions of themselves.
 
 Converted images are saved to a local folder called "completed".
 
+### References
+Used MIT's "hack" font in fonts directory.
+
 
 # How to use
 Run create_app.py to create a local server (http://127.0.0.1:8080/).
