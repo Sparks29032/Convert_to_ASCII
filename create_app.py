@@ -25,7 +25,7 @@ def make_ascii():
             f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
         if request.form.get('button') == 'CONVERT!':
             scale = float(request.form['scale'])
-            convert(int(1 / scale))
+            convert(1 / scale)
     return render_template('index.html')
 
 

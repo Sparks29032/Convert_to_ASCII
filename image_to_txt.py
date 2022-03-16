@@ -18,9 +18,9 @@ def convert_image_to_txt(upload_loc, image, image_type, text_loc, scale):
         row = []
         for i in range(w):
             # calculated based on weightings for each RGB color
-            bright = (0.299 * pix[int(i * scale / w_scale), j * scale][0] + 0.587 *
-                      pix[int(i * scale / w_scale), j * scale][1] + 0.114 * pix[int(i * scale / w_scale), j * scale][
-                          2]) / 256
+            bright = (0.299 * pix[int(i * scale / w_scale), int(j * scale)][0] +
+                      0.587 * pix[int(i * scale / w_scale), int(j * scale)][1] +
+                      0.114 * pix[int(i * scale / w_scale), int(j * scale)][2]) / 256
             row.append(bright)
         b_array.append(row)
     ascii_array = []
