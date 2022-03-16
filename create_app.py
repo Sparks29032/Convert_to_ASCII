@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request
 from flask_dropzone import Dropzone
 from convert import *
 

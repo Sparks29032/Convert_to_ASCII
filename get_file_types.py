@@ -8,9 +8,6 @@ def get_types():
     # directory with uploads
     upload_loc = 'uploads/'
 
-    # where the images should be put
-    text_loc = 'text_conversions/'
-
     # image name
     uploads = os.path.join(basedir, upload_loc)
     entries = os.listdir(uploads)
