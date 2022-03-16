@@ -1,9 +1,16 @@
 # What it does
-Creates a local server where you can upload images and videos.
+Creates a local server where you can upload images and videos. These media files can then be converted to ASCII versions of themselves. Converted images are saved to a local folder called "completed". For example, this image:
 
-These media files can then be converted to ASCII versions of themselves.
+<img src="https://user-images.githubusercontent.com/59151395/158705313-ef543100-8033-4d65-bfb0-212fa7db2c30.jpg" width="1000">
 
-Converted images are saved to a local folder called "completed".
+Was converted into:
+
+<img src="https://user-images.githubusercontent.com/59151395/158706341-d7fde08f-acd4-4a7f-aa7d-4b76ca9a4553.png" width="1000">
+
+Zoomed in:
+
+<img src="https://user-images.githubusercontent.com/59151395/158706491-db145d03-a2f4-4f28-a87c-b80f141cca05.png" width="1000">
+
 
 ### References
 Used MIT's "hack" font in fonts directory.
