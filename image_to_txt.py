@@ -9,7 +9,7 @@ def convert_image_to_txt(upload_loc, image, image_type, text_loc, scale):
     b_array = []
 
     # how large you want the image to be
-    w_scale = 1.5
+    w_scale = 1.4
     w = int(w * w_scale / scale)
     h = int(h / scale)
 
