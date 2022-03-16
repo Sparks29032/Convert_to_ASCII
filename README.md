@@ -14,11 +14,15 @@ Run create_app.py to create a local server (http://127.0.0.1:8080/).
 
 The first time you run the local server, hit convert before uploading files -- this will create required dependencies.
 
-Here, you can upload files to the box and hit convert to convert all uploaded files.
+Here, you can upload files to the box.
 
-Conversion does take a while as pixels are translated almost 1:1.
+Then, choose a scale factor you want the output to be created in.
 
-For smaller file size, change scale to a smaller number (1/5 still provides pretty good quality).
+For larger files, a scale of 0.2 provides pretty good quality.
+
+Now, hit convert to convert your file into ascii!
+
+Note, 1:1 conversions usually take a pretty long time.
 
 Once conversion is finished, the uploads should disappear.
 
