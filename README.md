@@ -11,6 +11,10 @@ Zoomed in:
 
 <img src="https://user-images.githubusercontent.com/59151395/158706491-db145d03-a2f4-4f28-a87c-b80f141cca05.png" width="1000">
 
+### Output
+For images: .png
+
+For videos: .mp4
 
 ### References
 Used MIT's "hack" font in fonts directory.
