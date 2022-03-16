@@ -19,7 +19,7 @@ def get_types():
     names = []
     types = []
     for entry in entries:
-        names.append(entry[:entry.find('.')])
-        types.append(entry[entry.find('.'):])
+        names.append(entry[:entry.rfind('.')])
+        types.append(entry[entry.rfind('.'):])
 
     return names, types
