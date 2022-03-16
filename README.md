@@ -28,6 +28,5 @@ Once conversion is finished, the uploads should disappear.
 All converted files will be placed in a local folder "completed" in the same directory as create_app.py.
 
 ### Output
-For images: .png
-
-For videos: .mp4
+For images: .png  
+For videos: .mp4  
