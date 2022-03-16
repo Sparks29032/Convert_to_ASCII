@@ -4,7 +4,7 @@ from PIL import Image, ImageFont, ImageDraw
 def convert_txt_to_image(completed_loc, text_loc, name):
     # prints at font size 21 (pretty big)
     font_size = 21
-    w_conversion = 0.61849069548
+    w_conversion = 0.61742959199
     h_conversion = 0.80769230769
     f = open(text_loc + name + '.txt', 'r')
     width = 0
