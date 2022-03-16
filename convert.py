@@ -48,17 +48,17 @@ def convert(scale):
 
             # convert all the images into txt files
             for image in os.listdir(images):
-                num = image[image.find("-frame") + len("-frame"):image.find('.')]
+                num = image[image.rfind("-frame") + len("-frame"):image.rfind('.')]
                 if len(num) < len(str(frames)):
                     while len(num) < len(str(frames)):
                         num = '0' + num
-                    new_name = image[:image.find("-frame") + len("-frame")] + num + '.jpg'
+                    new_name = image[:image.rfind("-frame") + len("-frame")] + num + '.jpg'
                     os.rename(images + image, images + new_name)
                     image = new_name
                 convert_image_to_txt(
                     parsed_images_loc,
-                    image[:image.find('.')],
-                    image[image.find('.'):],
+                    image[:image.rfind('.')],
+                    image[image.rfind('.'):],
                     text_loc,
                     scale
                 )
