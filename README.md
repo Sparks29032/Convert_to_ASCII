@@ -5,7 +5,7 @@ Creates a local server where you can upload images and videos. These media files
 
 Was converted into:
 
-<img src="https://user-images.githubusercontent.com/59151395/158706341-d7fde08f-acd4-4a7f-aa7d-4b76ca9a4553.png" width="1000">
+<img src="https://user-images.githubusercontent.com/59151395/158738309-0673c619-bbfa-48c5-b4c5-40ea7b82fbb2.png" width="1000">
 
 Zoomed in:
 
