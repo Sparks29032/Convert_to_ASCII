@@ -9,7 +9,7 @@ Was converted into:
 
 Zoomed in:
 
-<img src="https://user-images.githubusercontent.com/59151395/158706491-db145d03-a2f4-4f28-a87c-b80f141cca05.png" width="1000">
+<img src="https://user-images.githubusercontent.com/59151395/158738611-35d28dfd-e3d2-4fdd-a106-ce4cfb4ead26.png" width="1000">
 
 ### References
 Used MIT's open-source "hack" font in fonts directory.
