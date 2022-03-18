@@ -20,9 +20,11 @@ The first time you run the local server, hit convert before uploading files -- t
 Here, you can upload files to the box.
 
 Then, choose a scale factor you want the output to be created in.
-For larger files, a scale of 0.2 provides pretty good quality.
+For larger files, a scale of 0.2 provides pretty good quality. 
+You can also choose if you want the final file to be a txt file. 
+If so, you can then change the wideness of the final output. 
 
-Now, hit convert to convert your file into ascii!
+Finally, hit convert to convert your file into ascii!
 Note, 1:1 conversions usually take a pretty long time.
 Once conversion is finished, the uploads should disappear.
 All converted files will be placed in a local folder "completed" in the same directory as create_app.py.
@@ -30,3 +32,4 @@ All converted files will be placed in a local folder "completed" in the same dir
 ### Output
 For images: .png  
 For videos: .mp4  
+Raw output: .txt  
