@@ -22,13 +22,18 @@ dropzone = Dropzone(app)
 def make_ascii():
     if request.method == 'POST':
         # if the button is not pressed
-        if request.form.get('button') != 'CONVERT!':
+        if request.form.get('a_button') != 'Convert to ASCII!' and request.form.get('p_button') != 'Pixelate!':
             # accept uploads
             f = request.files.get('file')
-            f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
+
+            # ensure there is an upload
+            try:
+                f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
+            except AttributeError:
+                return render_template('index.html')
 
         # if the button is pressed
-        if request.form.get('button') == 'CONVERT!':
+        if request.form.get('a_button') == 'Convert to ASCII!':
             try:
                 # get the scale
                 scale = float(request.form['scale'])
@@ -36,8 +41,21 @@ def make_ascii():
                 # default is 1/5
                 scale = 1 / 5
 
+            # check if they want only the txt files
+            is_text = request.form.get('text')
+            if str(is_text) == "None":
+                is_text = False
+
+                # set the width scale (default at 1.4)
+                w_scale = 1.4
+            else:
+                is_text = True
+
+                # allow user to choose the width scale
+                w_scale = float(request.form['wideness'])
+
             # convert to ascii
-            convert(1 / scale)
+            convert(1 / scale, is_text, w_scale)
     # template file
     return render_template('index.html')
 

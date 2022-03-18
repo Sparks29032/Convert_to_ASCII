@@ -1,7 +1,7 @@
 from PIL import Image
 
 
-def convert_image_to_txt(upload_loc, image, image_type, text_loc, scale):
+def convert_image_to_txt(upload_loc, image, image_type, text_loc, scale, w_scale):
     # open image and get specs
     im = Image.open(upload_loc + image + image_type, 'r')
     w, h = im.size
@@ -9,7 +9,6 @@ def convert_image_to_txt(upload_loc, image, image_type, text_loc, scale):
     b_array = []
 
     # how large you want the image to be
-    w_scale = 1.4
     w = int(w * w_scale / scale)
     h = int(h / scale)
 

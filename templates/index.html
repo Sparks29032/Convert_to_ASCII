@@ -7,15 +7,59 @@
 </head>
 <body>
     <div style="font-size: 24px">Upload a file, and we'll convert it to ASCII!</div>
-    <div style="font-size: 16px">Works with: png, jpg, jpeg, jfif, mp4, mov, avi</div>
-    <div style="font-size: 16px">Output is png for images and mp4 for videos.</div>
+    <div style="font-size: 16px">Works with: png, jpg, jpeg, jfif, mp4, mov, avi.</div>
+    <div style="font-size: 16px">Conversion is finished when your files disappear from the upload window.</div>
+    <br>
     {{ dropzone.create(action='make_ascii') }}
     {{ dropzone.load_js() }}
     {{ dropzone.config() }}
+    <br>
     <form method="post" action="/">
+        <div style="font-size: 20px" style="float: left">Convert to ASCII options:</div>
+        <div style="font-size: 16px">Choose how detailed you want the output to be on the scale (default is 0.2).
+            Then choose if you want the output to be text or image/video (images will be png and videos will be mp4).
+            If you want a text output, you can scale the width of the output.
+            Finally, hit convert!
+        </div>
+        <br>
         <label for="scale" style="float: left">Scale (between 0 and 1):&nbsp</label>
         <input type="number" id="scale" name="scale" min="0" max="1" step="0.0001" style="float: left">
-        <input type="submit" value="CONVERT!" name="button" style="float: right"/>
+        <br><br>
+        <label for="scale" style="float: left">&nbspText output?&nbsp</label>
+        <input type="checkbox" id="text" name="text"
+               style="float: left" onclick="widthDisplay()">
+        <br><br>
+        <label for="wideness" id="wideness_label" style="display: none">&nbspHow wide?&nbsp</label>
+        <input type="range" id="wideness" name="wideness" min="1" max="3" value="2.5" step="0.1"
+               style="display: none" onchange="slideWidth(this.value)">
+        <input type="number" id="width_value" name="width_value" min="1" max="3" step = "0.1" value="2.5"
+               style="display: none" onchange="typeWidth(this.value)" oninput="typeWidth(this.value)">
+        <input type="submit" value="Convert to ASCII!" name="a_button" style="float: right"/>
+        <script language="JavaScript">
+            function slideWidth(val) {
+                width_value.value = val;
+            }
+            function typeWidth(val) {
+                if (1 <= val && val <= 3)
+                    wideness.value = val;
+            }
+            function widthDisplay() {
+                var checked = document.getElementById("text").checked;
+                if (checked) {
+                    wideness_label.style = "float: left"
+                    wideness.style = "float: left";
+                    width_value.style = "display: block"
+                }
+                else {
+                    wideness_label.style = "display: none";
+                    wideness.style = "display: none";
+                    width_value.style = "display: none";
+                }
+            }
+        </script>
+        <br><br>
+        <div style="font-size: 20px">Pixelate options:</div>
+        <input type="submit" value="Pixelate!" name="p_button" style="float: right"/>
     </form>
 </body>
 </html>
