@@ -30,8 +30,6 @@ def convert(scale, is_text, w_scale):
     raw = os.path.join(complete, raw_loc)
     directories.extend([pictures, videos, raw])
 
-    print(directories)
-
     # ensures the directories exist
     for directory in directories:
         if not os.path.isdir(directory):
