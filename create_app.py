@@ -22,7 +22,7 @@ dropzone = Dropzone(app)
 def make_ascii():
     if request.method == 'POST':
         # if the button is not pressed
-        if request.form.get('a_button') != 'Convert to ASCII!' and request.form.get('p_button') != 'Pixelate!':
+        if request.form.get('a_button') != 'Convert to ASCII!':
             # accept uploads
             f = request.files.get('file')
 
