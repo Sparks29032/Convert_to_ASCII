@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_dropzone import Dropzone
 from convert import *
+from pixelate import *
 
 # create path to base directory
 basedir = os.path.abspath(os.path.dirname(__name__))
@@ -21,8 +22,8 @@ dropzone = Dropzone(app)
 @app.route('/', methods=['GET', 'POST'])
 def make_ascii():
     if request.method == 'POST':
-        # if the button is not pressed
-        if request.form.get('a_button') != 'Convert to ASCII!':
+        # if the buttons are not pressed
+        if request.form.get('a_button') != 'Convert to ASCII!' and request.form.get('p_button') != 'Pixelate!':
             # accept uploads
             f = request.files.get('file')
 
@@ -32,7 +33,7 @@ def make_ascii():
             except AttributeError:
                 return render_template('index.html')
 
-        # if the button is pressed
+        # if the ASCII button is pressed
         if request.form.get('a_button') == 'Convert to ASCII!':
             try:
                 # get the scale
@@ -56,6 +57,18 @@ def make_ascii():
 
             # convert to ascii
             convert(1 / scale, is_text, w_scale)
+
+        # if the pixelate button is pressed
+        if request.form.get('p_button') == "Pixelate!":
+            try:
+                # get the scale
+                scale = float(request.form['pixel_scale'])
+            except ValueError:
+                # default is 1/5
+                scale = 1 / 5
+
+            # pixelate
+            pixelate(scale)
     # template file
     return render_template('index.html')
 
