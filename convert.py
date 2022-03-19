@@ -3,6 +3,7 @@ from image_to_txt import *
 from txt_to_image import *
 from video_to_image import *
 from image_to_video import *
+import shutil
 
 
 def convert(scale, is_text, w_scale):
@@ -20,6 +21,12 @@ def convert(scale, is_text, w_scale):
     complete = os.path.join(basedir, completed_loc)
     images = os.path.join(basedir, parsed_images_loc)
     directories = [uploads, text_conversions, complete, images]
+
+    # clear the text_conversions, images directories
+    if os.path.isdir(text_conversions):
+        shutil.rmtree(text_conversions, ignore_errors=True)
+    if os.path.isdir(images):
+        shutil.rmtree(images, ignore_errors=True)
 
     # subdirectories in completed
     pictures_loc = 'pictures/'
@@ -74,14 +81,14 @@ def convert(scale, is_text, w_scale):
                     if len(num) < len(str(frames)):
                         while len(num) < len(str(frames)):
                             num = '0' + num
-                        new_name = image[:image.rfind("-frame") + len("-frame")] + num + '.jpg'
+                        new_name = image[:image.rfind("-frame") + len("-frame")] + num + '.png'
                         os.rename(images + image, images + new_name)
                         image = new_name
                     convert_image_to_txt(
                         parsed_images_loc,
                         image[:image.rfind('.')],
                         image[image.rfind('.'):],
-                        upload_loc + raw_loc + video_files_loc,
+                        completed_loc + raw_loc + video_files_loc,
                         scale,
                         w_scale
                     )
@@ -96,7 +103,7 @@ def convert(scale, is_text, w_scale):
                     if len(num) < len(str(frames)):
                         while len(num) < len(str(frames)):
                             num = '0' + num
-                        new_name = image[:image.rfind("-frame") + len("-frame")] + num + '.jpg'
+                        new_name = image[:image.rfind("-frame") + len("-frame")] + num + '.png'
                         os.rename(images + image, images + new_name)
                         image = new_name
                     convert_image_to_txt(

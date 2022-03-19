@@ -19,7 +19,8 @@
         <div style="font-size: 16px">Choose how detailed you want the output to be on the scale (default is 0.2).
             Then choose if you want the output to be text or image/video (images will be png and videos will be mp4).
             If you want a text output, you can scale the width of the output.
-            Finally, hit convert!
+            Finally, hit convert.
+            Note, videos or very detailed files may take a while to convert, please be patient!
         </div>
         <br>
         <label for="scale" style="float: left">Scale (between 0 and 1):&nbsp</label>
@@ -39,10 +40,12 @@
             function slideWidth(val) {
                 width_value.value = val;
             }
+
             function typeWidth(val) {
                 if (1 <= val && val <= 3)
                     wideness.value = val;
             }
+
             function widthDisplay() {
                 var checked = document.getElementById("text").checked;
                 if (checked) {
